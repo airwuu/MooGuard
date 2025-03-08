@@ -7,3 +7,5 @@ grid
   - read x, y data from each cow 
 - display a circle on the grid at x,y given the time 
 - 
+
+make slider give time

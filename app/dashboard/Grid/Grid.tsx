@@ -76,33 +76,28 @@ export default function Grid() {
     return {x: pos.x, y: pos.y};
   };
 
+  // cowElements is an array of cowpoints 
+  const cowElements = cowData.map((cow) => {
+    const position = getCowPos(cow, time);
+
+    return (
+      <CowPoint
+        key={cow.id} x={position.x} y={position.y}
+        onClick={() => {
+          setSelectedCow(cow); 
+          console.log(`${cow.name}`);
+        }}
+      />
+    );
+  });
+
   return (
     <>
       <SliderComponent />
 
       {/* this means that x and y range from 0 - 200 */}
-      {/* this syntax is so ugly i'll move it outside */}
       <div className="relative w-[200px] h-[200px] bg-gray-500 flex items-center justify-center">
-        {(() => {
-          const cowElements = [];
-
-          for (let i = 0; i < cowData.length; i++) {
-            const cow = cowData[i];
-            const position = getCowPos(cow, time);
-
-            cowElements.push(
-              <CowPoint 
-                key={cow.id} x={position.x} y={position.y} 
-                onClick={() => {
-                  setSelectedCow(cow);
-                  console.log(`${cow.name}`);
-                }}  
-              /> // why red squiggly on cow?? 
-            );
-          }
-
-          return cowElements;
-        })()}
+        {cowElements}
       </div>
     </>
   );
