@@ -9,14 +9,13 @@ X. grid
 
 X. make slider give time
 
-
 dashboard has these components: 
-  - irregularities
-    - title (irregularities)  
+  - irregularities 
+    - title (irregularities) 
     - cowData 
       - cow name 
       - cow id 
-      - cow health and sickness confidence
+      - cow health and sickness confidence 
       - reason for sickness 
 - grid 
   - different colors 
