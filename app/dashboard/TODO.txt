@@ -8,3 +8,23 @@ X. grid
 - display a circle on the grid at x,y given the time 
 
 X. make slider give time
+
+
+dashboard has these components: 
+  - irregularities
+    - title (irregularities)  
+    - cowData 
+      - cow name 
+      - cow id 
+      - cow health and sickness confidence
+      - reason for sickness 
+- grid 
+  - different colors 
+    - gray for normal
+    - yellow, orange, red for unhealthy
+- slider 
+  - at the bottom of the page 
+  - controls time 
+- mooguard
+  - displays the data given the current time 
+  - every single one of the cows in a scrollable container

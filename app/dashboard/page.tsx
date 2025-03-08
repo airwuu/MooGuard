@@ -1,4 +1,3 @@
-import Cow from "./Cow/Cow"
 import Grid from "./Grid/Grid"
 
 import { DataTable } from "./DataTable/DataTable"
@@ -23,6 +22,8 @@ async function getData(): Promise<CowsTable[]> {
   ]
 }
 
+
+
 export default async function Dashboard({}) {
   const data = await getData()
 
@@ -42,10 +43,6 @@ export default async function Dashboard({}) {
 
       <div className="py-50"> 
         <Grid />
-      </div> 
-      
-      <div> 
-        <Cow />
       </div> 
     </>
   )
