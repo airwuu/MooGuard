@@ -1,0 +1,7 @@
+- update the cowdata so it's outside, instead of being in just grid 
+  - but its whatever cuz i have no idea how database looks like rn  
+
+- update CowPoint color given the cow's health
+  - yellow: potentially sick
+  - orange: sick
+  - red: dead
