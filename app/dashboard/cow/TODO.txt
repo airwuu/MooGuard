@@ -1,0 +1,6 @@
+- the cow component is something put at the bottom of the dashboard
+  - has these components: 
+    - cow name 
+    - slider and grid (slider component + create grid ourselves)
+    - illness percentage
+    - eating times (chart)
