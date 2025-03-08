@@ -29,8 +29,8 @@ export default function Home() {
           <main className="flex flex-col gap-[32px] row-start-2  items-center sm:items-start">
             <Image
               className="light:invert"
-              src="/cow.png"
-              alt="Next.js logo"
+              src="/logo.svg"
+              alt="logo"
               width={360}
               height={76}
               priority
