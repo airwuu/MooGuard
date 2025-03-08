@@ -3,14 +3,23 @@ import { Slider } from "@/components/ui/slider"
 
 type SliderProps = React.ComponentProps<typeof Slider>
 
-export function SliderComponent({ className, ...props }: SliderProps) {
+
+interface TimeSliderProps extends SliderProps {
+  time: number;
+  setTime: (value: number) => void;
+  max: number;
+  step: number;
+}
+
+export function SliderComponent({ time, setTime, max, step, className, ...props }: TimeSliderProps) {
   return (
     <Slider
-      defaultValue={[50]}
-      max={100}
-      step={1}
+      defaultValue={[time]}
+      onValueChange={(value) => setTime(value[0])}
+      max={max}
+      step={step}
       className={cn("w-[60%]", className)}
-      {...props}
+      {...props} 
     />
   )
 }

@@ -1,11 +1,10 @@
-total cows
+X. total cows
 
-grid 
+X. grid 
 - cow component 
 - array of coords x, y  
 - slider determines the current time 
   - read x, y data from each cow 
 - display a circle on the grid at x,y given the time 
-- 
 
-make slider give time
+X. make slider give time

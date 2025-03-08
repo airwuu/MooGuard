@@ -1,8 +1,8 @@
 import Cow from "./Cow/Cow"
 import Grid from "./Grid/Grid"
 
-import { DataTable } from "./DataTable"
-import { CowsTable, columns } from "./Columns"
+import { DataTable } from "./DataTable/DataTable"
+import { CowsTable, columns } from "./DataTable/Columns"
 
 const totalCows = 100; 
 const potentialIll = 5; 

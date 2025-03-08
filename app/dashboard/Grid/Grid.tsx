@@ -4,7 +4,7 @@
 
 import { useContext, useState } from "react";
 import CowPoint from "./CowPoint"; 
-import { SliderComponent } from "./Slider";
+import { SliderComponent } from "./Slider"; // cuz i cant name it Slider for some reason
 
 // i think we should use useContext to show the current selected cow. so the cow component can find it 
 
@@ -91,9 +91,17 @@ export default function Grid() {
     );
   });
 
+  // maximum time
+  const max = Math.max(...cowData.flatMap(cow => cow.positions.map(p => p.time)));
+
   return (
     <>
-      <SliderComponent />
+      <SliderComponent
+        time={time} 
+        setTime={setTime} 
+        max={max} 
+        step={1} 
+      />
 
       {/* this means that x and y range from 0 - 200 */}
       <div className="relative w-[200px] h-[200px] bg-gray-500 flex items-center justify-center">
