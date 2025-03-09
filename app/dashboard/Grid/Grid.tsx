@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import CowPoint from "./CowPoint"; 
 import { SliderComponent } from "./Slider";
 import CowContext from "./../Context/CowContext"; 
+import TimeContext from "./../Context/TimeContext";
 
 interface CowPosition {
   time: number;
@@ -28,16 +29,28 @@ const getCowPos = (cow: Cow, time: number): { x: number; y: number } => {
     }
   }
 
-  // what to do if null :skull:
-  return {x: pos.x, y: pos.y};
+  // fixed null pos :joy:
+  if (!pos) {
+    return { 
+      x: 0, 
+      y: 0 
+    }; 
+  }
+
+  return { 
+    x: pos.x, 
+    y: pos.y 
+  };
 };
 
 export default function Grid() {
   const cows = useContext(CowContext);
-  const [time, setTime] = useState(0);
   const [selectedCow, setSelectedCow] = useState<Cow | null>(null);
 
-  // array of all cowpoint components
+  const timeContext = useContext(TimeContext);
+  const { time, setTime } = timeContext;
+
+  // cowElements is an array of cowpoints
   const cowElements = cows.map(cow => {
     const position = getCowPos(cow, time);
 
@@ -54,20 +67,8 @@ export default function Grid() {
     );
   });
 
-  // max time for all cows
-  const max = cows.length > 0
-    ? Math.max(...cows.flatMap(cow => cow.positions.map(p => p.time)))
-    : 0;
-
   return (
     <>
-      <SliderComponent
-        time={time} 
-        setTime={setTime} 
-        max={max} 
-        step={1} 
-      />
-
       {/* this means that x and y range from 0 - 200 */}
       <div className="relative w-[200px] h-[200px] bg-gray-500 flex items-center justify-center">
         {cowElements}
