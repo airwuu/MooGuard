@@ -17,7 +17,8 @@ import {AnimatedSvg, FadeInText} from "@/components/ui/logo-anim"
 
 export default async function Home() {
 
-  const session = await auth0.getSession()
+  const session = await auth0.getSession(); 
+  
 
   return (
     <div className="overflow-hidden h-screen">
@@ -34,8 +35,8 @@ export default async function Home() {
           </NavigationMenuItem>
           <NavigationMenuItem className="border-2 rounded-2xl px-2"> 
 
-          <a href="api/auth/login">Log in</a>
-                    
+          <a href="/auth/login">Log in</a>
+
           </NavigationMenuItem>
       </NavigationMenuList>
       </NavigationMenu>
