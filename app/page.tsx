@@ -34,7 +34,7 @@ export default async function Home() {
           </NavigationMenuItem>
           <NavigationMenuItem className="border-2 rounded-2xl px-2"> 
 
-          <a href="/api/auth/login">Log in</a>
+          <a href="api/auth/login">Log in</a>
                     
           </NavigationMenuItem>
       </NavigationMenuList>
