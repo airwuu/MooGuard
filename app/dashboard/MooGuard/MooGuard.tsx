@@ -17,22 +17,17 @@ export default function MooGuard( ) {
 
   return (
     <> 
-      {/* put title here later */}
-
-      <ScrollArea className="h-[500px] w-[600px] rounded-md border p-4">
-        {cows.map((cow, index) => (
-            <div key={cow.id || index}>
-              <CowData cow={cow} />
-              {index !== cows.length - 1 && <Separator />}
-            </div>
-          ))}
-      </ScrollArea>
+      <div className="border-1 border-white p-4 w-[900px] h-[570px] font-mono text-white bg-gray-900">
+        <p className="text-xl font-bold">MooGuard</p>      
+        <ScrollArea className="h-[500px] w-[600px] rounded-md border p-4">
+          {cows.map((cow, index) => (
+              <div key={cow.id || index}>
+                <CowData cow={cow} />
+                {index !== cows.length - 1 && <Separator />}
+              </div>
+            ))}
+        </ScrollArea>
+      </div> 
     </>
   );
 }
-
-/*
-irregularities is placed at the top left of the website. it has a title, and 
-under that is a scrollable container. In the scrollable container, it will display 
-multiple CowData. CowData has name, id, health, sickness confidence, and sickness reason. 
-*/ 

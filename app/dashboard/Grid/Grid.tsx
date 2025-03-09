@@ -59,6 +59,7 @@ export default function Grid() {
         key={cow.id}
         x={position.x}
         y={position.y}
+        healthStatus={cow.healthStatus}
         onClick={() => {
           setSelectedCow(cow);
           console.log(`${cow.name}`);
@@ -70,7 +71,7 @@ export default function Grid() {
   return (
     <>
       {/* this means that x and y range from 0 - 200 */}
-      <div className="relative w-[200px] h-[200px] bg-gray-500 flex items-center justify-center">
+      <div className="relative w-[300px] h-[300px] bg-gray-500 flex items-center justify-center ml-5 mt-3">
         {cowElements}
       </div>
     </>

@@ -17,11 +17,13 @@ export default function SliderContainer() {
   : 0;
 
   return (
-    <SliderComponent
+    <div className="border-1 border-white p-4 w-[900px] h-[80px] font-mono text-white bg-gray-900 mt-10">
+    <SliderComponent className="mt-5 w-full"
       time={time} 
       setTime={setTime} 
       max={max} 
       step={1} 
     />
+    </div>
   );
 }
