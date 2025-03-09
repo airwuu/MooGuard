@@ -11,26 +11,26 @@ import {
   NavigationMenuViewport,
 
 } from "@/components/ui/navigation-menu"
-import {AnimatedSvg} from "@/components/ui/logo-anim"
+import {AnimatedSvg, FadeInText} from "@/components/ui/logo-anim"
 
 export default function Home() {
   return (
     <div className="overflow-hidden h-screen">
     <div className="fixed inset-0 -z-100  bg-gradient-to-tr from-slate-600 via-slate-800 to-slate-950" />
-    <div className="flex flex-row-reverse mr-5 pt-2">
-      <NavigationMenu >
+    <div className="flex flex-row-reverse mr-5 pt-2 ">
+      <NavigationMenu>
         <NavigationMenuList>
-          <NavigationMenuItem className="border-2 rounded-2xl"> 
-            <Link href="/dashboard" legacyBehavior passHref>
-              <NavigationMenuLink>
+          <NavigationMenuItem className="border-2 rounded-2xl px-1"> 
+            <Link href="/dashboard" legacyBehavior passHref >
+              <NavigationMenuLink className="text-xl">
                 Dashboard
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem className="border-2 rounded-2xl"> 
+          <NavigationMenuItem className="border-2 rounded-2xl px-2"> 
             <Link href="/login" legacyBehavior passHref>
-              <NavigationMenuLink>
-                Login
+              <NavigationMenuLink className="text-xl">
+               Login
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
@@ -48,6 +48,7 @@ export default function Home() {
               priority
             /> */}
             <AnimatedSvg width={300} height={300} className="text-blue-500" />
+            <FadeInText/>
           </main>
       </div>
     </div>

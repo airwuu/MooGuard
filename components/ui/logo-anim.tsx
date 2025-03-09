@@ -85,7 +85,7 @@ return (
         className={`
         transition-all duration-300 ease-in-out
         ${animationState === "hidden" ? "opacity-0" : "opacity-100"}
-        ${animationState === "slideLeft" ? "-translate-x-1 mr-4" : "translate-x-70 mr-4" }
+        ${animationState === "slideLeft" ? "-translate-x-1 mr-4" : "translate-x-10 mr-4" }
         `}
     >
         <Image width={width} height={height}
@@ -111,3 +111,28 @@ return (
     </div>
 )
 }
+
+
+export function FadeInText() {
+    const [isVisible, setIsVisible] = useState(false);
+  
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        setIsVisible(true);
+      }, 1000);
+  
+      return () => clearTimeout(timeout);
+    }, []);
+  
+    return (
+      <div
+        className={`transition-opacity duration-1200 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="text-xl translate-x-70 -translate-y-30">
+            Effortlessly manage your cattle with digital tagging
+        </div>
+      </div>
+    );
+  }
