@@ -18,9 +18,9 @@ export default function MooGuard() {
   };
 
   return (
-    <div className="border-1 border-white p-4 w-[900px] h-[570px] font-mono text-white bg-gray-900">
+    <div className="border-1 border-white p-4 w-[1200px] h-[730px] font-mono text-white bg-gray-900">
       <p className="text-xl font-bold">MooGuard</p>
-      <ScrollArea className="h-[500px] w-[600px] rounded-md border p-4">
+      <ScrollArea className="h-[650px] w-[1150px] rounded-md border p-4">
         {cows.map((cow) => (
           <div key={cow.id} className="transition duration-100">
             {/* Cow Basic Data (Clickable) */}

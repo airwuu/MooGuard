@@ -72,7 +72,7 @@ export default function Grid() {
     <>
       {/* this means that x and y range from 0 - 200 */}
       <div
-        className="relative w-[300px] h-[300px] bg-gray-700 border-2 border-gray-500 rounded-md 
+        className="relative w-[450px] h-[450px] bg-gray-700 border-2 border-gray-500 rounded-md 
                    shadow-lg grid grid-cols-10 grid-rows-10 gap-0.5 ml-5 mt-3">
        {cowElements}
       </div>

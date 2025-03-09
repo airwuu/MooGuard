@@ -27,10 +27,10 @@ export default function Irregularities( ) {
   const irregularCows = cows.filter(cow => cow.healthStatus === "Dead" || cow.healthStatus === "Ill");
 
   return (
-    <div className="border-1 border-white p-4 w-[380px] h-[300px] font-mono bg-gray-900"> 
+    <div className="border-1 border-white p-4 w-[530px] h-[300px] font-mono bg-gray-900"> 
       <p className="text-xl font-bold">Irregularities</p>   
 
-      <ScrollArea className="h-[230px] w-[340px] rounded-md border p-4">
+      <ScrollArea className="h-[230px] w-[500px] rounded-md border p-4">
         {/* if no irregular cows */}
         {irregularCows.length === 0 && (
           <p className="text-center text-gray-500">Your cows are all healthy!</p>
