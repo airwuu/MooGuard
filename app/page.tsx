@@ -1,3 +1,5 @@
+import { auth0 } from "../lib/auth0"
+
 import Image from "next/image";
 import Link from "next/link"
 import {
@@ -13,7 +15,11 @@ import {
 } from "@/components/ui/navigation-menu"
 import {AnimatedSvg, FadeInText} from "@/components/ui/logo-anim"
 
-export default function Home() {
+export default async function Home() {
+
+  const session = await auth0.getSession(); 
+  
+
   return (
     <div className="overflow-hidden h-screen">
     <div className="fixed inset-0 -z-100  bg-gradient-to-tr from-slate-600 via-slate-800 to-slate-950" />
@@ -28,11 +34,9 @@ export default function Home() {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem className="border-2 rounded-2xl px-2"> 
-            <Link href="/login" legacyBehavior passHref>
-              <NavigationMenuLink className="text-xl">
-               Login
-              </NavigationMenuLink>
-            </Link>
+
+          <a href="/auth/login">Log in</a>
+
           </NavigationMenuItem>
       </NavigationMenuList>
       </NavigationMenu>
