@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
+
 import CowContext from "./../Context/CowContext";
 import CowData from "../CowData";
-
+import gemini from '@/components/ui/gemini'
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { Card } from "@/components/ui/card";
@@ -16,11 +17,39 @@ export default function MooGuard() {
   const toggleDropdown = (cowId: string) => {
     setExpandedCow(expandedCow === cowId ? null : cowId);
   };
+  const [text, setText] = useState('');
+  useEffect(() => {
+    const fetchData = () => {
+        return new Promise((resolve, reject) => {
+          // Simulate a fetch request
+          gemini("Please give me a summary of how my cows are doing.", "Bertha Dead Has not moved in 7d15h31m Bartha Ill Irregular eating, overeating Fred Healthy Grass yum yum.Mooington Healthy Active and eating normally.Daisy Ill Lethargic, low movement detected.Bessie Dead No movement in 10 days.Clarabelle Healthy Good movement patterns and grazing.Otis Ill Sporadic movement, potential injury.Moolissa Healthy Consistent activity and feeding.Sir Moos-a-Lot Dead Collapsed, no movement detected.Spot Ill Erratic movements, signs of distress.Mootilda Healthy Good feeding patterns.Big Mac Ill Reduced activity, potential fever.ONLY SUMMARIZE UP TO 4 RANDOM COWS. Please give advice IN ONLY 2 SENTENCES. NO TEXT STYLING")
+            .then((response) => response)
+            .then((data) => resolve(data))
+            .catch((error) => reject(error))
+        })
+      }
+    fetchData()
+    .then(async (result) => {
+        
+        const allText = String(result).split("\n")
+        console.log(allText)
 
+
+
+        setText(String(result));
+
+    })
+    .catch((error) => {
+    console.error('Error fetching data:', error)
+    })
+    
+    
+}, []);
   return (
-    <div className="border-1 border-white p-4 w-[1200px] h-[730px] font-mono text-white bg-gray-900">
+    <div className="flex flex-col">
+    <div className="border-1 border-white p-4 max-w-[1050px] w-[1200px] h-[530px] font-mono text-white bg-gray-900">
       <p className="text-xl font-bold">MooGuard</p>
-      <ScrollArea className="h-[650px] w-[1150px] rounded-md border p-4">
+      <ScrollArea className="h-[450px] w-[1150px] rounded-md border p-4">
         {cows.map((cow) => (
           <div key={cow.id} className="transition duration-100">
             {/* Cow Basic Data (Clickable) */}
@@ -43,6 +72,11 @@ export default function MooGuard() {
         ))}
       </ScrollArea>
     </div>
+    <div className="flex flex-col border-1 border-white p-4 max-w-[1050px] w-[1200px] h-[130px] font-mono text-white bg-gray-900">
+    <p className="text-xl font-bold">Summary</p>
+      {text}
+    </div>
+  </div>
   );
 }
 

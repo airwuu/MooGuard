@@ -17,7 +17,7 @@ export default function SliderContainer() {
   : 0;
 
   return (
-    <div className="border-1 border-white p-4 w-[1200px] h-[80px] font-mono text-white bg-gray-900 mt-10">
+    <div className="border-1 border-white p-4 max-w-[1050px] w-[1200px] h-[80px] font-mono text-white bg-gray-900 mt-10">
     <SliderComponent className="mt-5 w-full"
       time={time} 
       setTime={setTime} 

@@ -58,6 +58,7 @@ export default async function Home() {
             <FadeInText/>
           </main>
       </div>
+      
     </div>
   );
 }
