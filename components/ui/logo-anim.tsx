@@ -85,7 +85,7 @@ return (
         className={`
         transition-all duration-300 ease-in-out
         ${animationState === "hidden" ? "opacity-0" : "opacity-100"}
-        ${animationState === "slideLeft" ? "-translate-x-1 mr-4" : "translate-x-10 mr-4" }
+        ${animationState === "slideLeft" ? "-translate-x-1 mr-4" : "translate-x-70 mr-4" }
         `}
     >
         <Image width={width} height={height}
@@ -102,7 +102,7 @@ return (
     <div
         className={`
         transition-all duration-300 ease-in-out
-        ${animationState !== "slideLeft" ? "opacity-0 -translate-x-50" : "opacity-100 -translate-x-10"}
+        ${animationState !== "slideLeft" ? "opacity-0 -translate-x-20" : "opacity-100 -translate-x-10"}
         ${textClassName}
         `}
     >
