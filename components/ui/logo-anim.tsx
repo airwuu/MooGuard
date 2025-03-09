@@ -131,7 +131,7 @@ export function FadeInText() {
         }`}
       >
         <div className="text-xl translate-x-70 -translate-y-30">
-            Effortlessly manage your cattle with digital tagging
+            Effortlessly manage cattle with ML-powered digital tagging
         </div>
       </div>
     );
