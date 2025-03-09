@@ -21,6 +21,7 @@ async function run() {
     console.log("Fetched cows from DB:", cows); 
 
     await client.close();
+    return cows;
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
   }
