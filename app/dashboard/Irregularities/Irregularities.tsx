@@ -20,18 +20,27 @@ export default function Irregularities( ) {
     console.log(cows);
   };
 
+  const irregularCows = cows.filter(cow => cow.healthStatus === "Dead" || cow.healthStatus === "Ill");
+
   return (
     <> 
       {/* put title here later */}
 
       <ScrollArea className="h-[200px] w-[350px] rounded-md border p-4">
-        {cows.map((cow, index) => (
-            <div key={cow.id || index}>
-              <CowData cow={cow} />
-              {index !== cows.length - 1 && <Separator />}
-            </div>
-          ))}
+        {/* if no irregular cows */}
+        {irregularCows.length === 0 && (
+          <p className="text-center text-gray-500">Your cows are all healthy!</p>
+        )}
+
+        {/* show all irregular cows */}
+        {irregularCows.map((cow, index) => (
+          <div key={cow.id || index}>
+            <CowData cow={cow} />
+            {index !== irregularCows.length - 1 && <Separator />}
+          </div>
+        ))}
       </ScrollArea>
+
     </>
   );
 }
