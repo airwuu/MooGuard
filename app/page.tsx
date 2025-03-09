@@ -18,7 +18,7 @@ import {AnimatedSvg, FadeInText} from "@/components/ui/logo-anim"
 export default async function Home() {
 
   const session = await auth0.getSession(); 
-  
+  const isAuthenticated = !!session?.user; 
 
   return (
     <div className="overflow-hidden h-screen">
@@ -27,18 +27,21 @@ export default async function Home() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem className="border-2 rounded-2xl px-1"> 
-            <Link href="/dashboard" legacyBehavior passHref >
+            {isAuthenticated && <Link href="/dashboard" legacyBehavior passHref >
               <NavigationMenuLink className="text-xl">
                 Dashboard
               </NavigationMenuLink>
-            </Link>
+            </Link>}
           </NavigationMenuItem>
-          <NavigationMenuItem className="border-2 rounded-2xl px-2"> 
-
-          <a href="/auth/login">Log in</a>
-
-          </NavigationMenuItem>
-      </NavigationMenuList>
+          <NavigationMenuItem className="border-2 rounded-2xl px-4 py-2">
+              <a
+                href={isAuthenticated ? "/auth/logout" : "/auth/login"}
+                className="text-xl block w-full text-center"
+              >
+                {isAuthenticated ? "Log out" : "Log in"}
+              </a>
+            </NavigationMenuItem>
+          </NavigationMenuList>
       </NavigationMenu>
     </div>
       <div className="flex flex-col items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
