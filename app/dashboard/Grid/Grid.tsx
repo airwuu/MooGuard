@@ -57,7 +57,7 @@ interface Cow {
 // communicates with slider to display the current position of cow
 export default function Grid() {
   const [time, setTime] = useState(0);
-  const [selectedCow, setSelectedCow] = useState(null); 
+  const [selectedCow, setSelectedCow] = useState([null]); 
 
   const getCowPos = (cow: Cow, time: number): { x: number; y: number } => {
     let pos = null;

@@ -29,6 +29,18 @@ const sampleCowData: Cow[] = [
       { time: 2, x: 80, y: 140 },
     ],
   },
+  {
+    id: "3",
+    name: "Fred",
+    healthStatus: "Healthy",
+    confidence: 80,
+    reason: "Grass yum yum.",
+    positions: [
+      { time: 0, x: 100, y: 150 },
+      { time: 1, x: 100, y: 120 },
+      { time: 2, x: 100, y: 90 },
+    ],
+  },
 ];
 
 interface CowProviderProps {
