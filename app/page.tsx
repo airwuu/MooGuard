@@ -1,4 +1,4 @@
-import { auth0 } from "./lib/auth0"
+import { auth0 } from "../lib/auth0"
 
 import Image from "next/image";
 import Link from "next/link"
