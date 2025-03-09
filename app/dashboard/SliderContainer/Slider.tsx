@@ -6,7 +6,7 @@ type SliderProps = React.ComponentProps<typeof Slider>
 
 interface TimeSliderProps extends SliderProps {
   time: number;
-  setTime: (value: number) => void;
+  setTime: (time: number) => void;
   max: number;
   step: number;
 }
